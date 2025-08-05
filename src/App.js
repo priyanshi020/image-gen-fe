@@ -9,7 +9,7 @@ function App() {
   const handleSend = async (prompt) => {
     setMessages((prev) => [...prev, { type: "user", text: prompt }]);
     try {
-      const response = await fetch("http://localhost:5000/api/generate-image", {
+      const response = await fetch("https://img-gen-be.onrender.com/api/generate-image", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt }),
